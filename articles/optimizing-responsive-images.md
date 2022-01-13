@@ -17,21 +17,21 @@ published: true
 3. マイムタイプの変更（mime）
 4. アートディレクション（art）
 
-上記4つのユースケースの全ての組み合わせを網羅した記事が[Dev.Opera](https://dev.opera.com/articles/responsive-images/)で紹介されており、いつも参考にしています。更に詳しく知りたい方は、[Cloudfour](https://cloudfour.com/)の[Responsive Images 101 Serise](https://cloudfour.com/thinks/responsive-images-101-definitions/)や、[Responsive Images the Simple Way](https://cloudfour.com/thinks/responsive-images-the-simple-way/)の記事を参照される事をお勧めします。
+上記4つのユースケースの全ての組み合わせを網羅した記事が[Dev.Opera](https://dev.opera.com/articles/responsive-images/)で紹介されており、いつも参考にしています。更に詳しく知りたい方は、[Cloudfour](https://cloudfour.com/)の[Responsive Images 101 Serise](https://cloudfour.com/thinks/responsive-images-101-definitions/)や、[Responsive Images the Simple Way](https://cloudfour.com/thinks/responsive-images-the-simple-way/)の記事も参照される事をお勧めします。
 
 
 ## マークアップの問題点
 上記の記事を参考にマークアップした後、正しくマークアップできているか、どのように品質を担保すれば良いのでしょうか？
 
-特に、`sizes`属性の値の単位はビューポートユニットである`vw`を使用することが多いので、画像が固定幅の`px`や画面幅の`100vw`の画像であれば問題はありませんが、コンテナ内に画像が配置されている場合などは、正しく導出するのに時間がかかり、果たして本当に正しい値なのか心配になる事があります。
+特に、`sizes`属性の値の単位はビューポートユニットである`vw`を使用することが多いので、画像が固定幅の`px`や画面幅いっぱいの`100vw`の画像であれば問題はありませんが、コンテナ内に画像が配置されている場合などは、正しく導出するのに時間がかかり、果たして本当に正しい値なのか心配になる事があります。
 
 そんな不安を解消してくれるツールが、次のセクションで紹介する[Resp Image Lint](https://github.com/ausi/RespImageLint)になります。
 
 
 ## Resp Image Lintの概要
-Resp Image Lintの作者は、オーストリアのザルツブルグにあるウェブ制作やフレームワークを提供している会社[MADE/YOUR/DAY](https://myd.at/)に所属しているウェブデベロッパーの[Martin Auswöger](https://twitter.com/ausi)です。
+Resp Image Lintの作者は、オーストリアのザルツブルグにあるウェブ制作やフレームワークを提供している会社 "[MADE/YOUR/DAY](https://myd.at/)" のウェブデベロッパーの[Martin Auswöger](https://twitter.com/ausi)です。
 
-`Resp Image Lint`は、画像に関するマークアップを解析し、18項目の厳密なチェックを行ってくれます。[ドキュメント](https://ausi.github.io/respimagelint/docs.html)には、`Correct`/`Incorrect`の具体例も掲載されていますので、一度目を通しおくと良いかと思います。
+`Resp Image Lint`は、画像に関するマークアップを解析し、18項目の厳密なチェックを行ってくれます。[ドキュメント](https://ausi.github.io/respimagelint/docs.html)には、`Correct`/`Incorrect`の具体例も掲載されていますので、一度軽く目を通しおくと良いと思います。
 
 1. Descriptors must be unique
 2. Malformed descriptor
@@ -54,7 +54,7 @@ Resp Image Lintの作者は、オーストリアのザルツブルグにある�
 
 
 ## Resp Image Lintの注目の機能
-2017年4月に注目すべき機能が追加されました。レスポンシブ画像の`<source>`や`<img>`タグの`sizes`属性が計算と一致しない、もしくは欠落している場合、コピーペースト可能な`sizes`属性を自動的に生成して、デベロッパーに提案してくれる機能になります。
+2017年4月に注目すべき機能が追加されました。レスポンシブ画像の`<source>`や`<img>`タグの`sizes`属性の値が正しくない、もしくは欠落している場合、コピーペースト可能な`sizes`属性を自動的に生成して、デベロッパーに提案してくれる機能になります。
 
 この機能が追加された時の、作者のTweetが下記になります。
 
@@ -63,29 +63,20 @@ Resp Image Lintの作者は、オーストリアのザルツブルグにある�
 
 
 :::message
-ただ1つ留意する点があるとすれば、[メディアクエリの解析は20px単位で実行されます](https://github.com/ausi/respimagelint/issues/25#issuecomment-294025130)が、これまで使用してきた経験から、大勢に影響はない小さなレベルの問題と考えています。
+ただ1つ留意する点があるとすれば、[メディアクエリの解析は20px単位で実行されます](https://github.com/ausi/respimagelint/issues/25#issuecomment-294025130)。しかし、これまで使用してきた経験から、大勢に影響はない小さなレベルの問題と考えています。
 :::
 
 
 ## Resp Image Lintの使い方
-使い方はとても簡単です。次の4ステップです。
+使い方はとても簡単で、次の4ステップになります。
 
-1. [こちらの公式ページ](https://ausi.github.io/respimagelint/)に移動して、`Lint Images`のボタンをブックマークバーにドラッグするか、Chromeであればショートカットの`⌘D`でブックマーク登録してください。
-2. 検証したいサイトのページに移動して、先ほどブックマークした`Resp Image Lint`のアイコンをクリックしてください。
+1. [こちらの公式ページ](https://ausi.github.io/respimagelint/)に移動して、`Lint Images`のボタンをブックマークバーにドラッグするか、Chromeであればショートカットの`⌘D`でブックマーク登録します。
+2. 検証したいサイトのページに移動して、先ほどブックマークした`Resp Image Lint`のアイコンをクリックします。
 3. ツールが起動され、さまざまなビューポートサイズとピクセル密度でページが自動的にスキャンされます。
 4. レポートが作成され、問題があった箇所を修正して完了です（`sizes`属性に関する問題があった場合のみ、`Resp Image Lint`は最適な値を提案してくれます）。
 
-
-
-:::message
-下が生成されたレポート画面のキャプチャになります。敢えて`sizes`属性をつけないで`Resp Image Lint`を起動した場合、「`sizes`属性がないので、`sizes="(min-width: 1180px) 600px, (min-width: 780px) calc(47.11vw + 54px), (min-width: 720px) 600px, calc(82.5vw + 23px)"`で試して」と最適な`sizes`属性の値を提案してくれます。
-:::
-
 このような機能は些細かもしれませんが、本当に助かります。
 
-
-![](/images/optimizing-responsive-images/2022-01-13-01.png)
-*Resp Image Lintのレポート画面*
 
 ## 紹介事例
 この便利なツールは、[CSS-Tricks](https://twitter.com/css/status/978390008485724160)や[Smashing Magazine](https://twitter.com/smashingmag/status/732537169902899200)、そしてデベロッパーである[Sia Karamalegos](https://twitter.com/TheGreenGreek)のブログの中でも紹介されています。
@@ -95,9 +86,9 @@ https://sia.codes/posts/eleventy-and-cloudinary-images/#use-srcset-and-sizes-so-
 素晴らしいメディアやデベロッパー達が紹介しているので、信頼もできるのではないでしょうか。
 
 ## 最後に
-いかがだったでしょうか？静的サイトのレスポンシブ画像の最適化に、[Resp Image Lint](https://github.com/ausi/respimagelint)を使用する事で、効率と品質を向上させる事ができると思います。
+静的サイトのレスポンシブ画像の最適化に、[Resp Image Lint](https://github.com/ausi/respimagelint)を使用する事で、効率と品質を向上させる事ができると思います。
 
-このような素晴らしいツールを作成してくれた[Martin](https://twitter.com/ausi)には感謝しかありません。
+このような素晴らしいツールを作成してくれた[Martin](https://twitter.com/ausi)には感謝いたします。
 
 皆さんも是非試してみてください。
 
