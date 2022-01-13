@@ -86,9 +86,9 @@ https://sia.codes/posts/eleventy-and-cloudinary-images/#use-srcset-and-sizes-so-
 素晴らしいメディアやデベロッパー達が紹介しているので、信頼もできるのではないでしょうか。
 
 ## 最後に
-静的サイトのレスポンシブ画像の最適化に、[Resp Image Lint](https://github.com/ausi/respimagelint)を使用する事で、効率と品質を向上させる事ができると思います。
+静的サイトのレスポンシブ画像の最適化に、[Resp Image Lint](https://github.com/ausi/respimagelint)を使用する事で、効率と品質を向上させる事ができます。
 
-このような素晴らしいツールを作成してくれた[Martin](https://twitter.com/ausi)には感謝いたします。
+このような素晴らしいツールを作成してくれた[Martin](https://twitter.com/ausi)に感謝いたします。
 
 皆さんも是非試してみてください。
 
