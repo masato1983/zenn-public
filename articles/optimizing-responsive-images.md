@@ -7,7 +7,7 @@ published: true
 ---
 
 
-この記事では、レスポンシブ画像の最適化および検証ツールとして活用している、[Resp Image Lint](https://github.com/ausi/RespImageLint)と呼ばれるツール（ブックマークレット）を紹介したいと思います。
+この記事では、レスポンシブ画像の最適化および検証ツールとして活用している、[Resp Image Lint](https://github.com/ausi/RespImageLint)のブックマークレットを紹介したいと思います。
 
 ## Responsive画像の最適化
 `Resp Image Lint`についてお話しする前に、レスポンシブ画像のマークアップについて触れておきます。レスポンシブ画像を正しくマークアップするには、次の4つのキーワードについて正しく理解しておく必要があります。
