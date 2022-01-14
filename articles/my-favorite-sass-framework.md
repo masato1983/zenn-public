@@ -32,7 +32,7 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
 私がお勧めするfunctionとmixinを紹介します。
 
 ### 1. fs-rem (function)
-`fs-rem`は、`px`を`rem`に変換する`function`になります。はじめは自作の関数を定義して使用していましたが、バリデーションが盛り込まれたロバスト性の高い`fs-rem`に切り替えました。Threespot社で使用されている実績も判断材料のひとつになります。
+`fs-rem`は、`px`を`rem`に変換する`function`になります。はじめは自作の関数を定義して使用していましたが、バリデーションが盛り込まれたロバスト性の高い`fs-rem`に切り替えました。Threespot社で使用されている実績も切り替える判断材料のひとつになりました。
 
 `fs-rem`の[ソースコード](https://github.com/Threespot/frontline-sass/blob/master/src/functions/_rem.scss)です。
 
@@ -86,7 +86,7 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
 
 
 ### 2. fs-scale (function)
-2つ目は、`fs-scale`のfunctionです。主にfluid typographyを目的として使用していますが、テキスト以外のマージンやパディングにも適用できます。ie11などの`min()`,`max()`,`clamp()`をサポートしていない場合に効果を発揮します。
+2つ目は、`fs-scale`のfunctionになります。主にfluid typographyを目的として使用していますが、テキスト以外のマージンやパディングにも適用できます。ie11などの`min()`,`max()`,`clamp()`をサポートしていないブラウザに対応する場合に効果を発揮します。
 
 `fs-scale`の[ソースコード](https://github.com/Threespot/frontline-sass/blob/master/src/functions/_scale.scss)です。
 
@@ -132,9 +132,7 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
 }
 ```
 
-実際の使用例を示します。
-
-1行記述するだけで良いのでとても助かりますし、メディアクエリの単位が、`em`なのもお気に入りの理由のひとつになります。
+実際の使用例を示します。1行記述するだけで良いのでとても助かりますし、メディアクエリの単位を`em`、プロパティの値の単位を`rem`に自動変換してくれるのもお気に入りの理由のひとつになります。
 
 
 ```scss: usage examples (input)
@@ -145,14 +143,16 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
 
 ```scss: usage examples (output)
 .c-heading__levle2 {
+    font-size: 3rem;
+
   @media all and (min-width: 23.4375em) {
-    h1 {
+    .c-heading__level2 {
       font-size: calc(4.4399596367vw + 1.9593844601rem);
     }
   }
 
   @media all and (min-width: 85.375em) {
-    h1 {
+    .c-heading__level2 {
       font-size: 5.75rem;
     }
   }
