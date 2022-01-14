@@ -28,8 +28,8 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
 - selectors
     - mixins
 
-## Frontline Sassでお勧めのfunctionとmixin
-私が頻繁に使用するfunctionと関数を3つ紹介します。
+## お勧めのfunctionとmixin
+私がお勧めするfunctionとmixinを紹介します。
 
 ### 1. fs-rem (function)
 `fs-rem`は、`px`を`rem`に変換する`function`になります。はじめは自作の関数を定義して使用していましたが、バリデーションが盛り込まれたロバスト性の高い`fs-rem`に切り替えました。Threespot社で使用されている実績も判断材料のひとつになります。
