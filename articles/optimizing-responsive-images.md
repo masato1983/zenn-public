@@ -78,7 +78,7 @@ Resp Image Lintの作者は、オーストリアのザルツブルグにある�
 このような機能は些細かもしれませんが、本当に助かります。
 
 
-## 紹介事例
+## Resp Image Lintの紹介事例
 この便利なツールは、[CSS-Tricks](https://twitter.com/css/status/978390008485724160)や[Smashing Magazine](https://twitter.com/smashingmag/status/732537169902899200)、そしてデベロッパーである[Sia Karamalegos](https://twitter.com/TheGreenGreek)のブログの中でも紹介されています。
 
 https://sia.codes/posts/eleventy-and-cloudinary-images/#use-srcset-and-sizes-so-the-browser-can-pick-the-best-image
@@ -88,7 +88,7 @@ https://sia.codes/posts/eleventy-and-cloudinary-images/#use-srcset-and-sizes-so-
 ## 最後に
 静的サイトのレスポンシブ画像の最適化に、[Resp Image Lint](https://github.com/ausi/respimagelint)を使用する事で、効率と品質を向上させる事ができます。
 
-このような素晴らしいツールを作成してくれた[Martin](https://twitter.com/ausi)に感謝いたします。
+このような素晴らしいツールを作成してくれた[Martin](https://twitter.com/ausi)さんに感謝いたします。
 
 皆さんも是非試してみてください。
 
