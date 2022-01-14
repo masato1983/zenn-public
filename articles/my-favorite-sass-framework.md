@@ -29,14 +29,14 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
     - mixins
 
 ## お勧めのfunctionとmixin
-私がお勧めするfunctionとmixinを紹介します。
+お勧めの`function`と`mixin`を紹介します。
 
 ### 1. fs-rem (function)
 `fs-rem`は、`px`を`rem`に変換する`function`になります。はじめは自作の関数を定義して使用していましたが、バリデーションが盛り込まれたロバスト性の高い`fs-rem`に切り替えました。Threespot社で使用されている実績も切り替える判断材料のひとつになりました。
 
 `fs-rem`の[ソースコード](https://github.com/Threespot/frontline-sass/blob/master/src/functions/_rem.scss)です。
 
-```scss:source code
+```scss: fs-rem (function)
 /// Convert px to rem
 /// @group Main
 /// @param {Number | Map} $values - Value values to convert
@@ -72,13 +72,13 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
 
 実際の使用例を示します。
 
-```scss: usage examples (input)
+```scss: scss (input)
 .c-heading__level2 {
   font-size: fs-rem(32px);
 }
 ```
 
-```scss: usage examples (output) 
+```css: css (output) 
 .c-heading__level2 {
   font-size: 2rem;
 }
@@ -90,7 +90,7 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
 
 `fs-scale`の[ソースコード](https://github.com/Threespot/frontline-sass/blob/master/src/functions/_scale.scss)です。
 
-```scss: source code
+```scss: fs-scale (function)
 /// Scale a value relative to the viewport width using `calc()` and viewport units
 /// @group Main
 /// @param {Number} $start - Starting value
@@ -132,32 +132,34 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
 }
 ```
 
-実際の使用例を示します。1行記述するだけで良いのでとても助かりますし、メディアクエリの単位を`em`、プロパティの値の単位を`rem`に自動変換してくれるのもお気に入りの理由のひとつになります。
+実際の使用例を示します。
 
 
-```scss: usage examples (input)
+```scss: scss (input)
 .c-heading__level2 {
   @include fs-scale(font-size, (375px: 48px, 1366px: 92px)); 
 }
 ```
 
-```scss: usage examples (output)
+```css: css (output)
 .c-heading__levle2 {
     font-size: 3rem;
+}
 
-  @media all and (min-width: 23.4375em) {
-    .c-heading__level2 {
-      font-size: calc(4.4399596367vw + 1.9593844601rem);
-    }
+@media all and (min-width: 23.4375em) {
+  .c-heading__level2 {
+    font-size: calc(4.4399596367vw + 1.9593844601rem);
   }
+}
 
-  @media all and (min-width: 85.375em) {
-    .c-heading__level2 {
-      font-size: 5.75rem;
-    }
+@media all and (min-width: 85.375em) {
+  .c-heading__level2 {
+    font-size: 5.75rem;
   }
 }
 ```
+
+1行の記述だけで`fluid typography`が実現できるのでとても助かりますし、メディアクエリの単位を`em`、プロパティの値の単位を`rem`に自動変換してくれるのもお気に入りの理由のひとつになります。
 
 
 ### 3. fs-aspect-ratio、fs-absolute-fill (mixin)
@@ -165,7 +167,7 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
 
 `fs-aspect-ratio`の[ソースコード](https://github.com/Threespot/frontline-sass/blob/master/src/mixins/_aspect-ratio.scss)になります。
 
-```scss: source (fs-aspect-ratio)
+```scss: fs-aspect-ratio (mixin)
 /// Maintain aspect ratio
 /// @group Main
 /// @param {Number} $ratio - Aspect ratio (width / height)
@@ -190,7 +192,7 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
 
 `fs-absolute-fill`の[ソースコード](https://github.com/Threespot/frontline-sass/blob/master/src/mixins/_absolute-fill.scss)になります。
 
-```scss: source (fs-absolute-fill)
+```scss: fs-absolute-fill (mixin)
 /// Absolutely position an element and fill available space
 /// @group Main
 @mixin fs-absolute-fill {
@@ -202,17 +204,15 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
 }
 ```
 
-<br>
+実際の使用例を示します。
 
-実際の使用例を示します。`fs-aspect-ratio`と`fs-absolute-fill`を使用する事で、コードの記述量が減ります。また`fs-aspect-ratio`と`fs-absolute-fill`という名前から機能を推測できるので、可読性も向上しているのではないかと思います。
-
-```html: usage examples (input)
+```html: html (input)
 <div class="p-top-awards__media">
     <img class="p-top-awards__image" src="/assets/img/top/top-award-01-1040x600-cd638981.jpg" alt="" />
 </div>
 ```
 
-```scss: usage examples (input)
+```scss: scss (input)
 /* media layout */
 .p-top-awards__media {
   @include fs-aspect-ratio(div(324, 187));
@@ -224,7 +224,7 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
 }
 ```
 
-```scss: usage examples (output)
+```css: css (output)
 /* media layout */
 .p-top-awards__media {
   position: relative;
@@ -247,6 +247,8 @@ Frontline Sassのドキュメントは[こちら](https://threespot.github.io/fr
   height: 100%;
 }
 ```
+
+コードの記述量が減り、`fs-aspect-ratio`と`fs-absolute-fill`という名前からも機能が推測できるので、可読性が向上しているのではないかと思います。
 
 ## VSCodeのスニペット
 Frontline Sassには、AtomとVScodeのスニペットプラグインが用意されていますので、補完機能で効率よくコードを書くことができます。
