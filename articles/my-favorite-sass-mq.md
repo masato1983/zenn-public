@@ -2,7 +2,7 @@
 title: "お勧めのメディアクエリのmixin：sass-mq"
 emoji: "😺"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["html", "css", "visual studio code", "npm"]
+topics: ["html", "css", "vscode", "npm"]
 published: true
 ---
 
