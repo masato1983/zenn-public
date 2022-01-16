@@ -1,5 +1,5 @@
 ---
-title: "お勧めの media query mixin：sass-mq"
+title: "お勧めのメディアクエリのmixin：sass-mq"
 emoji: "😺"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["html", "css", "visual studio code", "npm"]
