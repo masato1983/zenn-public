@@ -20,7 +20,7 @@ published: true
 
 https://medium.com/@mezoistvan/finally-a-css-only-solution-to-hover-on-touchscreens-c498af39c31c
 
-MDNでも同様の内容が記載されており、スマホやタブレットなどのタッチスクリーンデバイス、でホバースタイルが当てられた要素をタップすると、フラッシュ（ちらつき）の原因になったります。
+MDNでも同様の内容が記載されており、スマホやタブレットなどのタッチスクリーンデバイスで、ホバースタイルが当てられた要素をタップすると、フラッシュ（ちらつき）の原因になったります。
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/:hover
 
@@ -39,7 +39,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/:hover
 
 https://github.com/scriptex/hover-media-query
 
-ソースコードはとてもシンプルです。hover CSS Media Featureをサポートしていない、`IE10`/`IE11`/`Firefox before 64`も対象としています。
+ソースコードはとてもシンプルです。`hover CSS Media Feature`をサポートしていない、`IE10`/`IE11`/`Firefox before 64`も対象としています。
 
 ```scss: hover.scss
 @mixin hover {
@@ -59,7 +59,7 @@ https://github.com/scriptex/hover-media-query
 }
 ```
 
-あとは、ホバーしたい要素に`@include`で適用します。ボタンコンポーネントにホバースタイルを適用する具体例を示します。（`hover-medea-query`のコードは、`abstracts`ディレクトリ内で管理しています）
+あとは、ホバーしたい要素に`@include`で`mixin`を呼び出して`hover`スタイルを適用します。下のコードは`button`コンポーネントに`hover`のメディアクエリを使用して、`:hover`擬似クラスを適用した例になります。（`hover-medea-query`のコードは、`abstracts`ディレクトリ内で管理しています）
 
 ```scss: input
 @use '../../abstracts/' as *;
@@ -142,14 +142,14 @@ https://github.com/scriptex/hover-media-query
 }
 ```
 
-`hover-media-query`の`mixin`を使用することで、記述量を減らすことができるので助かります。
+`hover-media-query`の`mixin`を使用することで、記述量を減らすことができるので助かっています。
 
 ## ターゲットデバイスに適用されるメディアクエリの確認
 ターゲットのデバイスがどのメディアクエリを適用するのかを[テストするサイト](https://hover-pointer-media-query.glitch.me/)があります。下の画像は、私が使用しているMac Miniのテスト結果になります。主要な入力メカニズムがポインティングデバイスであり、ホバー機能を持っている事がわかります。
 
 ![media-query-tester](/images/my-favorite-hover-media-query/media-query-tester.png)
 
-手元にある、`Mac Mini`/`iPad`/`iPhone`/`android`でテストしてみた結果が以下になります（`iPad`/`iPhone`/`android`はタッチスクリーンでテストしています）。このようにしてターゲットデバイスに適用される、メディアクエリを確認する事ができます。
+手元にある、`Mac Mini`/`iPad`/`iPhone`/`android`でテストしてみた結果が以下になります（`iPad`/`iPhone`/`android`はタッチスクリーンでテストしています）。このようにしてターゲットデバイスに適用される、メディアクエリを確認する事もできます。
 
 | - | Mac  | iPad | iPhone | android |
 | ---- | ---- | ---- | --- | --- |
@@ -166,7 +166,7 @@ https://github.com/scriptex/hover-media-query
 
 
 ## 参考記事
-本記事を書くにあたり、以下の記事を参考にしております。
+本記事を書くにあたり、以下の記事を参考にしました。
 
 - [Finally, a CSS only solution to :hover on touchscreens](https://medium.com/@mezoistvan/finally-a-css-only-solution-to-hover-on-touchscreens-c498af39c31c)
 - [Interaction Media Features and Their Potential (for Incorrect Assumptions)](https://css-tricks.com/interaction-media-features-and-their-potential-for-incorrect-assumptions/)
@@ -177,6 +177,6 @@ https://github.com/scriptex/hover-media-query
 
 
 ## 最後に
-ユーザーに混乱を与えるインタラクションをしないよう、適切にメディアクエリを適用する必要があります。[hover-media-query](https://github.com/scriptex/hover-media-query)を活用することにより、数行のコードで`:hover`擬似クラスの問題点を回避することができます。皆さんも試してみてください。
+ユーザーに混乱を与えるインタラクションをしないよう、適切に`hover`のメディアクエリを適用する必要があります。[hover-media-query](https://github.com/scriptex/hover-media-query)を活用することにより、数行のコードで`:hover`擬似クラスの問題点を回避することができます。皆さんも試してみてください。
 
 そして、`hover-media-query`の`mixin`を用意してくださった、[Atanas](https://twitter.com/scriptexbg)さんに感謝いたします。
